@@ -1,0 +1,21 @@
+<div class="d-flex gap-5 justify-content-center">
+    <h3>Buscar por capital</h3>
+</div>
+<hr> 
+<div class="row p-3">
+     <app-buscar (onEnter)="buscar($event)"
+                        (onDebounce)="sugerencias($event)"
+                        placeholder="Buscar por capital">
+    </app-buscar>
+</div>
+<hr>
+<div class="alert alert-danger" *ngIf="error">
+    No se encontro nada con el termino
+</div>
+<div class="row" *ngIf="paises.length > 0">
+    <div >
+        <app-tabla [paises]="paises">
+
+        </app-tabla>
+    </div>
+</div>
